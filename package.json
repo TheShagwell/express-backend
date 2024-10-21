@@ -4,7 +4,8 @@
   "description": "An Express JS backend ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server",
+    "dev": "nodemon server"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/TheShagwell/express-backend#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.1"
   }
 }
