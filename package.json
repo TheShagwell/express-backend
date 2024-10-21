@@ -1,0 +1,31 @@
+{
+  "name": "express-backend",
+  "version": "1.0.0",
+  "description": "An Express JS backend ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheShagwell/express-backend.git"
+  },
+  "keywords": [
+    "Express",
+    "JS",
+    "Authentication",
+    "Authorization",
+    "Middleware",
+    "Routing",
+    "etc"
+  ],
+  "author": "Ezrah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheShagwell/express-backend/issues"
+  },
+  "homepage": "https://github.com/TheShagwell/express-backend#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
