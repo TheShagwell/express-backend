@@ -7,6 +7,15 @@
 
 // *** Get all the post
 const getAllPost = (req, res) => {
+    const { search } = req.query;
+
+    if (search) {
+      // Filter posts that contain the search term in the title (case-insensitive)
+      const filteredPosts = jsonPost.filter((post) =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+      );
+      return res.json(filteredPosts);
+    }
   res.json(jsonPost);
 };
 
@@ -83,16 +92,18 @@ const getPostLimit = (req, res) => {
 
 // *** Get filter by title
 const getFilter = (req, res) => {
-  const {
-    query: { value },
-  } = req;
-  if (value) {
-    const filteredPosts = jsonPost.filter((post) =>
-      post.title.toLowerCase().includes(value.toLowerCase())
-    );
-    return res.send(filteredPosts);
-  }
-  return res.send(jsonPost);
+    const { search } = req.query;
+
+    if (search) {
+      // Filter posts that contain the search term in the title (case-insensitive)
+      const filteredPosts = jsonPost.filter((post) =>
+        post.title.toLowerCase().includes(search.toLowerCase())
+      );
+      return res.json(filteredPosts);
+    }
+  
+    // If no search term is provided, return the full list of posts
+    res.json(jsonPost);
 };
 
 module.exports = {
