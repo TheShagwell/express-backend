@@ -1,15 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const getPosts = require('../controllers/postController')
+const getPosts = require("../controllers/postController");
 
-router.route('/')
-    .get(getPosts.getAllPost)
-    .post(getPosts.createPost)
-    .put(getPosts.updatePost)
-    .delete(getPosts.deletePost)
+router
+  .route("/")
+  .get(getPosts.getPostLimit)
+  .get(getPosts.getFilter)
+  .get(getPosts.getAllPost)
+  .post(getPosts.createPost);
 
-router.route('/:id')
-    .get(getPosts.getPostID)
+router
+  .route("/:id")
+  .put(getPosts.updatePost)
+  .get(getPosts.getPostID)
+  .delete(getPosts.deletePost);
 
 // // * To get a limit of the number of posts
 // router.get("/", );
